@@ -1,0 +1,28 @@
+<section class="about" id="sobre-mi" aria-labelledby="about-title">
+  <div class="about__intro">
+
+    <h2 class="about__kicker">Sobre mí</h2>
+
+    <div
+      class="about__portrait"
+      [style.background-image]="'linear-gradient(180deg, rgba(109, 162, 255, 0.12), rgba(143, 114, 255, 0.1)), url(' + profileImagePath + ')'"
+      role="img"
+      aria-label="Foto profesional de Raúl Barón Gómez"
+    ></div>
+
+    <!-- <h2 id="about-title">Sobre mí</h2> -->
+    <p class="about__profile">Desarrollador Full Stack Junior</p>
+    <p class="about__summary">
+      Desarrollo aplicaciones web combinando frontend, backend y gestión de datos, con especial foco en Angular, TypeScript, Java y Spring Boot.
+    </p>
+  </div>
+
+  <dl class="about__facts">
+    @for (fact of facts; track fact.label) {
+      <div class="about__fact">
+        <dt>{{ fact.label }}</dt>
+        <dd>{{ fact.value }}</dd>
+      </div>
+    }
+  </dl>
+</section>

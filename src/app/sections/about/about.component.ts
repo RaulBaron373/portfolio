@@ -1,0 +1,38 @@
+import { Component } from '@angular/core';
+
+@Component({
+  selector: 'app-about',
+  standalone: true,
+  templateUrl: './about.component.html',
+  styleUrl: './about.component.scss'
+})
+export class AboutComponent {
+  readonly profileImagePath = '/images/profile.jpg';
+
+  readonly facts = [
+    {
+      label: 'Titulación',
+      value: 'Técnico Superior en Desarrollo de Aplicaciones Web'
+    },
+    {
+      label: 'Ubicación',
+      value: 'Madrid, España'
+    },
+    {
+      label: 'Stack principal',
+      value: 'Angular · TypeScript · Java · Spring Boot'
+    },
+    {
+      label: 'Herramientas',
+      value: 'Git · GitHub · Figma · WordPress'
+    },
+    {
+      label: 'Bases de datos',
+      value: 'MySQL · SQL'
+    },
+    {
+      label: 'Disponibilidad',
+      value: 'Abierto a oportunidades junior'
+    }
+  ] as const;
+}

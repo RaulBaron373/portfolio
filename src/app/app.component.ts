@@ -1,11 +1,13 @@
 import { Component } from '@angular/core';
+import { NavbarComponent } from './components/navbar/navbar.component';
+import { AboutComponent } from './sections/about/about.component';
+import { HeroComponent } from './sections/hero/hero.component';
 
 @Component({
   selector: 'app-root',
-  imports: [],
+  standalone: true,
+  imports: [NavbarComponent, HeroComponent, AboutComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
 })
-export class AppComponent {
-  title = 'portfolio';
-}
+export class AppComponent {}
