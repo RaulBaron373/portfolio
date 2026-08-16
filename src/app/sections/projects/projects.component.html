@@ -1,0 +1,56 @@
+<section class="projects" id="proyectos">
+    <div class="projects__container">
+        <header class="projects__header">
+        <p class="projects__kicker">Proyectos</p>
+        <h2>Trabajo destacado</h2>
+        </header>
+
+        <div class="projects__grid">
+            @for (project of projects; track project.title) {
+                <article class="project-card" [class.project-card--featured]="project.featured">
+                    <div class="project-card__layout">
+                        <div class="project-card__content">
+                            <p class="project-card__type">
+                            {{ project.type }}
+                            </p>
+
+                            <h3>{{ project.title }}</h3>
+
+                            <p class="project-card__description">
+                            {{ project.description }}
+                            </p>
+
+                            <ul
+                            class="project-card__technologies"
+                            aria-label="Tecnologías utilizadas"
+                            >
+                            @for (technology of project.technologies; track technology) {
+                                <li>{{ technology }}</li>
+                            }
+                            </ul>
+
+                            <div class="project-card__actions">
+                            <a
+                                class="project-card__link"
+                                [href]="project.repositoryUrl"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                            >
+                                Ver repositorio
+                            </a>
+                            </div>
+                        </div>
+
+                        <div class="project-card__media">
+                            <img
+                            [src]="project.image"
+                            [alt]="'Captura del proyecto ' + project.title"
+                            loading="lazy"
+                            />
+                        </div>
+                    </div>
+                </article>
+            }
+        </div>
+    </div>
+</section>
