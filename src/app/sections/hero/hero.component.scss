@@ -114,7 +114,7 @@
 
 .hero__cta--secondary:is(:hover, :focus-visible) {
   transform: translateY(-2px) scale(1.02);
-  border-color: rgba(109, 162, 255, 0.3);
+  border-color: #6da2ff4d;
 }
 
 .hero__social {
@@ -131,7 +131,7 @@
 .hero__social-link:is(:hover, :focus-visible) {
   border-color: var(--hero-violet-soft);
   transform: translateY(-2px) scale(1.06);
-  box-shadow: 0 0 18px rgba(109, 162, 255, 0.12);
+  box-shadow: 0 0 18px #6da2ff1f;
 }
 
 .hero__visual {
@@ -204,11 +204,11 @@
 
 .hero__panel:hover {
   transform: translateY(-3px);
-  border-color: rgba(109, 162, 255, 0.35);
+  border-color: #6da2ff59;
   box-shadow:
     var(--shadow-soft),
-    0 0 30px rgba(109, 162, 255, 0.1),
-    0 0 50px rgba(143, 114, 255, 0.06);
+    0 0 30px #6da2ff1a,
+    0 0 50px #8f72ff0f;
 }
 
 .hero__panel::before {

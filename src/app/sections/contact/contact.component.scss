@@ -100,6 +100,37 @@
         0 0 20px rgba(109, 162, 255, 0.14);
 }
 
+.contact__secondary {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 0.9rem 1.4rem;
+
+    border: 1px solid var(--surface-border-contrast);
+    border-radius: var(--radius-pill);
+
+    color: var(--text-main);
+    background: rgba(109, 162, 255, 0.06);
+
+    font-weight: 700;
+    text-decoration: none;
+
+    transition:
+        transform 0.2s ease,
+        border-color 0.2s ease,
+        background-color 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+.contact__secondary:hover,
+.contact__secondary:focus-visible {
+    transform: translateY(-2px) scale(1.02);
+    border-color: rgba(109, 162, 255, 0.35);
+    background: rgba(109, 162, 255, 0.1);
+    box-shadow: 0 0 18px rgba(109, 162, 255, 0.08);
+}
+
 .contact__email {
     color: var(--text-secondary);
     text-decoration: none;
@@ -215,7 +246,8 @@
         flex-direction: column;
     }
 
-    .contact__primary {
+    .contact__primary
+    .contact__secondary  {
         width: 100%;
     }
 

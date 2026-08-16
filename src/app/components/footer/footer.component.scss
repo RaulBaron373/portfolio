@@ -1,0 +1,126 @@
+.footer {
+    padding: 2rem 0 2.5rem;
+    border-top: 1px solid var(--surface-border);
+}
+
+.footer__container {
+    width: var(--content-width);
+    margin: 0 auto;
+
+    display: grid;
+    grid-template-columns: 1fr auto auto;
+    align-items: center;
+    gap: 2rem;
+}
+
+.footer__identity {
+    display: flex;
+    align-items: center;
+    gap: 0.9rem;
+}
+
+.footer__brand {
+    display: inline-grid;
+    place-items: center;
+
+    width: 2.5rem;
+    height: 2.5rem;
+
+    border: 1px solid rgba(143, 114, 255, 0.28);
+    border-radius: var(--radius-sm);
+
+    background:
+        linear-gradient(
+        135deg,
+        rgba(109, 162, 255, 0.22),
+        rgba(143, 114, 255, 0.28)
+        ),
+        rgba(255, 255, 255, 0.02);
+
+    color: var(--text-main);
+    text-decoration: none;
+
+    font-family: 'Space Grotesk', 'Segoe UI', sans-serif;
+    font-weight: 700;
+
+    box-shadow: 0 0 18px rgba(109, 162, 255, 0.08);
+
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease,
+        border-color 0.2s ease;
+}
+
+.footer__brand:hover,
+.footer__brand:focus-visible {
+    transform: translateY(-2px);
+    border-color: rgba(143, 114, 255, 0.45);
+    box-shadow: 0 0 22px rgba(109, 162, 255, 0.14);
+}
+
+.footer__name,
+.footer__role,
+.footer__copyright {
+    margin: 0;
+}
+
+.footer__name {
+    color: var(--text-main);
+    font-weight: 700;
+}
+
+.footer__role {
+    margin-top: 0.2rem;
+    color: var(--text-soft);
+    font-size: 0.85rem;
+}
+
+.footer__links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.footer__links a {
+    color: var(--text-secondary);
+    text-decoration: none;
+    font-size: 0.9rem;
+
+    transition:
+        color 0.2s ease,
+        transform 0.2s ease;
+}
+
+.footer__links a:hover,
+.footer__links a:focus-visible {
+    color: var(--text-main);
+    transform: translateY(-1px);
+}
+
+.footer__copyright {
+    color: var(--text-soft);
+    font-size: 0.82rem;
+    white-space: nowrap;
+}
+
+@media (max-width: 900px) {
+    .footer__container {
+        grid-template-columns: 1fr;
+        justify-items: start;
+        gap: 1.5rem;
+    }
+}
+
+@media (max-width: 640px) {
+    .footer {
+        padding: 1.75rem 0 2rem;
+    }
+
+    .footer__links {
+        gap: 0.75rem;
+    }
+
+    .footer__copyright {
+        white-space: normal;
+    }
+}
