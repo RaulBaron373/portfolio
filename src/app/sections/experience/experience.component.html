@@ -1,4 +1,4 @@
-<section class="experience" id="trayectoria">
+<section class="experience" id="trayectoria" appRevealOnScroll>
     <div class="experience__container">
         <header class="experience__header">
             <p class="experience__kicker">Trayectoria</p>
@@ -12,7 +12,13 @@
 
                     <div class="experience__card">
                         <div class="experience__meta">
-                            <span class="experience__type">{{ item.type }}</span>
+                            <span
+                                class="experience__type"
+                                [class.experience__type--work]="item.type === 'Experiencia'"
+                                [class.experience__type--education]="item.type === 'Formación'"
+                            >
+                                {{ item.type }}
+                            </span>
                             <span class="experience__period">{{ item.period }}</span>
                     </div>
 

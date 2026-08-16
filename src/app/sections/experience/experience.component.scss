@@ -66,6 +66,29 @@
     border: 1px solid var(--surface-border);
     border-radius: var(--radius-lg);
     background: var(--surface-subtle);
+
+    transition:
+        transform 0.25s ease,
+        border-color 0.25s ease,
+        background-color 0.25s ease,
+        box-shadow 0.25s ease;
+}
+
+.experience__card:hover {
+    transform: translateY(-4px);
+    border-color: rgba(109, 162, 255, 0.28);
+
+    background:
+        linear-gradient(
+        135deg,
+        rgba(109, 162, 255, 0.06),
+        rgba(143, 114, 255, 0.035)
+        ),
+        var(--surface-subtle);
+
+    box-shadow:
+        0 18px 38px rgba(0, 0, 0, 0.12),
+        0 0 24px rgba(109, 162, 255, 0.06);
 }
 
 .experience__meta {
@@ -87,6 +110,18 @@
     font-weight: 700;
     text-transform: uppercase;
     letter-spacing: 0.06em;
+}
+
+.experience__type--work {
+    color: #6da2ff;
+    background: rgba(109, 162, 255, 0.1);
+    border: 1px solid rgba(109, 162, 255, 0.14);
+}
+
+.experience__type--education {
+    color: #b89cff;
+    background: rgba(184, 156, 255, 0.1);
+    border: 1px solid rgba(184, 156, 255, 0.14);
 }
 
 .experience__period {
@@ -128,6 +163,23 @@
     border-radius: var(--radius-pill);
     color: var(--text-secondary);
     font-size: 0.82rem;
+
+    background: rgba(255, 255, 255, 0.02);
+
+    transition:
+        transform 0.2s ease,
+        color 0.2s ease,
+        border-color 0.2s ease,
+        background-color 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+.experience__technologies li:hover {
+    transform: translateY(-2px);
+    color: var(--text-main);
+    border-color: rgba(109, 162, 255, 0.32);
+    background: rgba(109, 162, 255, 0.08);
+    box-shadow: 0 0 14px rgba(109, 162, 255, 0.08);
 }
 
 @media (max-width: 640px) {

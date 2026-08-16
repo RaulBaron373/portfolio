@@ -1,7 +1,10 @@
 <section class="hero" id="inicio">
   <div class="hero__content">
     <p class="hero__role">{{ profile.role }}</p>
-    <h1>{{ profile.name }}</h1>
+    <h1>
+      Raúl Barón
+      <span class="hero__surname">Gómez</span>
+    </h1>
     <p class="hero__stack">{{ profile.stack }}</p>
     <p class="hero__description">{{ profile.description }}</p>
 
@@ -15,9 +18,9 @@
         Ver proyectos
       </a>
 
-      <button class="hero__cta hero__cta--secondary" type="button" disabled>
+      <a class="hero__cta hero__cta--secondary" href="#">
         Descargar CV
-      </button>
+      </a>
     </div>
 
     <div class="hero__social" aria-label="Enlaces profesionales">
@@ -132,6 +135,7 @@
             <span class="hero__token hero__token--keyword">typeof</span>
             <span class="hero__token hero__token--variable">profile</span>
             <span class="hero__token hero__token--plain">;</span>
+            <span class="hero__cursor"></span>
           </span>
         </div>
       </div>

@@ -1,6 +1,6 @@
 <header class="navbar">
   <nav class="navbar__container" aria-label="Navegacion principal">
-    <a class="navbar__brand" href="#inicio" aria-label="Ir al inicio">RB</a>
+    <a class="navbar__brand" href="#inicio" aria-label="Ir al inicio" (click)="onNavLinkClick('#inicio')">RB</a>
 
     <button
       class="navbar__toggle"
@@ -18,12 +18,15 @@
     <ul class="navbar__links" [class.navbar__links--open]="isMenuOpen">
       @for (link of navLinks; track link.href) {
         <li>
-          <a 
-            class="navbar__link" 
+          <a
+            class="navbar__link"
+            [class.navbar__link--active]="isActiveSection(link.href)"
             [href]="link.href"
-            (click)="closeMenu()"
+            [attr.aria-current]="isActiveSection(link.href) ? 'location' : null"
+            (click)="onNavLinkClick(link.href)"
           >
-            {{ link.label }}</a>
+            {{ link.label }}
+          </a>
         </li>
       }
     </ul>
