@@ -1,0 +1,52 @@
+<section class="contact" id="contacto">
+    <div class="contact__container">
+        <div class="contact__content">
+        <p class="contact__kicker">Contacto</p>
+
+        <h2>¿Hablamos?</h2>
+
+        <p class="contact__description">
+            Estoy abierto a oportunidades como desarrollador web junior y a participar
+            en proyectos donde pueda seguir creciendo profesionalmente.
+        </p>
+
+        <div class="contact__actions">
+            <a class="contact__primary" [href]="'mailto:' + email">
+            Escríbeme
+            </a>
+
+            <a class="contact__email" [href]="'mailto:' + email">
+            {{ email }}
+            </a>
+        </div>
+        </div>
+
+        <div class="contact__details">
+        <div class="contact__detail">
+            <span class="contact__label">Ubicación</span>
+            <p>Madrid, España</p>
+        </div>
+
+        <div class="contact__detail">
+            <span class="contact__label">Disponibilidad</span>
+            <p>Abierto a oportunidades junior</p>
+        </div>
+
+        <div class="contact__detail">
+            <span class="contact__label">Perfiles</span>
+
+            <div class="contact__socials">
+            @for (social of socialLinks; track social.label) {
+                <a
+                [href]="social.url"
+                target="_blank"
+                rel="noopener noreferrer"
+                >
+                {{ social.label }}
+                </a>
+            }
+            </div>
+        </div>
+        </div>
+    </div>
+</section>
