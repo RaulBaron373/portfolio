@@ -23,7 +23,7 @@ export class ProjectsComponent {
         'JHipster'
       ],
       image: 'images/projects/detall-sublim.jpg',
-      repositoryUrl: 'https://github.com/RaulBaron373/Detall-Sublim',
+      repositoryUrl: 'https://github.com/RaulBaron373/detallSublim',
       featured: true
     }
   ] as const;
