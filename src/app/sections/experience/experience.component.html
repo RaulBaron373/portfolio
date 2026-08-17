@@ -6,7 +6,7 @@
         </header>
 
         <div class="experience__timeline">
-            @for (item of experienceItems; track item.title) {
+            @for (item of experienceItems; track item.title; let i = $index) {
                 <article class="experience__item">
                     <div class="experience__marker" aria-hidden="true"></div>
 
@@ -27,16 +27,38 @@
                     <p class="experience__organization">
                         {{ item.organization }}
                     </p>
+                    <button
+                    class="experience__toggle"
+                    type="button"
+                    [attr.aria-expanded]="openedItemIndex === i"
+                    (click)="toggleItem(i)"
+                    >
+                    <span>
+                        {{ openedItemIndex === i ? 'Ocultar detalles' : 'Ver detalles' }}
+                    </span>
 
-                    <p class="experience__description">
-                    {{ item.description }}
-                    </p>
+                    <span
+                        class="experience__toggle-arrow"
+                        [class.experience__toggle-arrow--open]="openedItemIndex === i"
+                        aria-hidden="true"
+                    >
+                        ↓
+                    </span>
+                    </button>
+                    <div
+                    class="experience__details"
+                    [class.experience__details--open]="openedItemIndex === i"
+                    >
+                        <p class="experience__description">
+                        {{ item.description }}
+                        </p>
 
-                    <ul class="experience__technologies" aria-label="Tecnologías utilizadas">
-                        @for (technology of item.technologies; track technology) {
-                            <li>{{ technology }}</li>
-                    }
-                    </ul>
+                        <ul class="experience__technologies" aria-label="Tecnologías utilizadas">
+                            @for (technology of item.technologies; track technology) {
+                                <li>{{ technology }}</li>
+                            }
+                        </ul>
+                    </div>
                 </div>
             </article>
             }

@@ -17,7 +17,27 @@
     </p>
   </div>
 
-  <dl class="about__facts">
+  <button
+    class="about__details-toggle"
+    type="button"
+    [attr.aria-expanded]="isDetailsOpen"
+    aria-controls="about-details"
+    (click)="toggleDetails()"
+  >
+    <span>
+      {{ isDetailsOpen ? 'Ocultar detalles' : 'Ver detalles' }}
+    </span>
+
+    <span
+      class="about__details-arrow"
+      [class.about__details-arrow--open]="isDetailsOpen"
+      aria-hidden="true"
+    >
+      ↓
+    </span>
+  </button>
+
+  <dl class="about__facts" id="about-details" [class.about__facts--open]="isDetailsOpen">
     @for (fact of facts; track fact.label) {
       <div class="about__fact">
         <dt>{{ fact.label }}</dt>

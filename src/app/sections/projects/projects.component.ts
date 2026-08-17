@@ -9,6 +9,11 @@ import { RevealOnScrollDirective } from '../../shared/directives/reveal-on-scrol
   styleUrl: './projects.component.scss'
 })
 export class ProjectsComponent {
+  openProjectIndex: number | null = null;
+
+  toggleProject(index: number): void {
+    this.openProjectIndex = this.openProjectIndex === index ? null : index;
+  } 
   readonly projects = [
     {
       title: 'Detall Sublim',

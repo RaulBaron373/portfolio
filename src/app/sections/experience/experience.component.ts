@@ -9,6 +9,12 @@ import { RevealOnScrollDirective } from '../../shared/directives/reveal-on-scrol
   styleUrl: './experience.component.scss'
 })
 export class ExperienceComponent {
+  openedItemIndex: number | null = null;
+
+  toggleItem(index: number): void {
+    this.openedItemIndex = this.openedItemIndex === index ? null : index;
+  }
+  
   readonly experienceItems = [
     {
       type: 'Experiencia',

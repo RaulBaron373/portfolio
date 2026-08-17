@@ -1,22 +1,55 @@
 <section class="skills" id="tecnologias" appRevealOnScroll>
     <div class="skills__container">
         <header class="skills__header">
-        <p class="skills__kicker">Tecnologías</p>
-        <h2>Stack y herramientas</h2>
+            <p class="skills__kicker">Tecnologías</p>
+            <h2>Stack y herramientas</h2>
         </header>
 
         <div class="skills__grid">
-        @for (group of skillGroups; track group.title) {
-            <article class="skills__card">
-            <h3>{{ group.title }}</h3>
+            @for (group of skillGroups; track group.title; let i = $index) {
+                <article class="skills__card">
 
-            <ul class="skills__list">
-                @for (skill of group.skills; track skill) {
-                <li>{{ skill }}</li>
-                }
-            </ul>
-            </article>
-        }
+                    <button
+                        class="skills__card-header"
+                        type="button"
+                        [attr.aria-expanded]="openGroupIndex === i"
+                        (click)="toggleGroup(i)"
+                    >
+                        <span class="skills__card-title-wrap">
+                            <span class="skills__card-icon" aria-hidden="true">
+                                <img [src]="group.icon" alt="" />
+                            </span>
+
+                            <span>{{ group.title }}</span>
+                        </span>
+
+                        <span
+                            class="skills__card-arrow"
+                            [class.skills__card-arrow--open]="openGroupIndex === i"
+                            aria-hidden="true"
+                        >
+                            ›
+                        </span>
+                    </button>
+
+                    <div
+                        class="skills__card-content"
+                        [class.skills__card-content--open]="openGroupIndex === i"
+                    >
+                        <ul class="skills__list">
+                            @for (skill of group.skills; track skill; let skillIndex = $index) {
+                                <li
+                                    class="skills__item"
+                                    [style.--skill-index]="skillIndex"
+                                >
+                                    {{ skill }}
+                                </li>
+                            }
+                        </ul>
+                    </div>
+
+                </article>
+            }
         </div>
     </div>
 </section>

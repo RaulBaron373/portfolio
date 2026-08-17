@@ -147,6 +147,10 @@
   line-height: 1.65;
 }
 
+.about__details-toggle {
+  display: none;
+}
+
 @media (max-width: 900px) {
   .about {
     grid-template-columns: 1fr;
@@ -170,4 +174,61 @@
   .about__portrait {
     width: min(100%, 220px);
   }
+
+  .about__details-toggle {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+
+    width: 100%;
+    margin-top: 1.25rem;
+    padding: 0.85rem 1rem;
+
+    border: 1px solid rgba(184, 156, 255, 0.8);
+    border-radius: 0.9rem;
+    color: var(--text-main);
+
+    background: linear-gradient(135deg, var(--accent-blue) 0%, var(--accent-violet) 100%);
+    box-shadow: 0 18px 30px rgba(92, 112, 255, 0.3);
+    backdrop-filter: blur(18px) saturate(180%);
+    -webkit-backdrop-filter: blur(18px) saturate(180%);
+
+    
+    font: inherit;
+    font-weight: 600;
+    cursor: pointer;
+  }
+
+  .about__details-arrow {
+    display: inline-block;
+    transition: transform 0.3s ease;
+  }
+
+  .about__details-arrow--open {
+    transform: rotate(180deg);
+  }
+
+  .about__facts {
+    max-height: 0;
+    overflow: hidden;
+    opacity: 0;
+    transform: translateY(-0.5rem);
+
+    margin-top: 0;
+
+    transition:
+      max-height 0.45s ease,
+      opacity 0.3s ease,
+      transform 0.3s ease,
+      margin-top 0.3s ease;
+  }
+
+  .about__facts--open {
+    max-height: 60rem;
+    opacity: 1;
+    transform: translateY(0);
+    margin-top: 1.25rem;
+  }
+
 }

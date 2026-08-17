@@ -11,6 +11,12 @@ import { RevealOnScrollDirective } from '../../shared/directives/reveal-on-scrol
 export class AboutComponent {
   readonly profileImagePath = '/images/profile.jpg';
 
+  isDetailsOpen = false;
+
+  toggleDetails(): void {
+    this.isDetailsOpen = !this.isDetailsOpen;
+  }
+
   readonly facts = [
     {
       label: 'Titulación',
