@@ -7,7 +7,7 @@
 }
 
 .skills__container {
-    width: var(--content-width);
+    width: 100%;
     margin: 0 auto;
 }
 
@@ -268,16 +268,28 @@
 
     .skills__group {
         grid-template-columns:
-        56px
+        48px
         minmax(0, 1fr);
 
-        gap: 1.5rem;
+        gap: 1.25rem;
     }
 
     .skills__group-content {
         grid-template-columns: 1fr;
 
-        gap: 1.2rem;
+        gap: 1rem;
+    }
+
+    .skills__list {
+        gap: 0.55rem;
+    }
+
+    .skills__list li {
+        min-height: 38px;
+
+        padding: 0.5rem 0.75rem;
+
+        font-size: 0.8rem;
     }
 }
 
@@ -334,6 +346,43 @@
 
     .skills__group:hover::before {
         width: 3rem;
+    }
+}
+
+@media (max-width: 380px) {
+    .skills {
+        padding: 3.5rem 0;
+    }
+
+    .skills__header h2 {
+        font-size: 2.35rem;
+    }
+
+    .skills__group {
+        padding: 1.5rem 0;
+    }
+
+    .skills__group-content h3 {
+        font-size: 1.25rem;
+    }
+
+    .skills__list {
+        gap: 0.4rem;
+    }
+
+    .skills__list li {
+        min-height: 36px;
+
+        padding: 0.45rem 0.62rem;
+
+        font-size: 0.76rem;
+    }
+
+    .skills__list li::before {
+        width: 0.3rem;
+        height: 0.3rem;
+
+        margin-right: 0.45rem;
     }
 }
 

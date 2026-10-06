@@ -300,19 +300,28 @@
   }
 
   .about__layout {
-    grid-template-columns: 1fr;
+    grid-template-columns:
+      minmax(220px, 0.7fr)
+      minmax(0, 1.3fr);
 
-    gap: 3rem;
+    align-items: start;
+
+    gap: clamp(1.75rem, 4vw, 2.5rem);
   }
 
   .about__portrait {
-    width: min(100%, 560px);
+    width: 100%;
     min-height: 0;
+
     aspect-ratio: 4 / 5;
   }
 
   .about__content {
-    max-width: 760px;
+    max-width: none;
+  }
+
+  .about__summary {
+    font-size: clamp(1.5rem, 3.4vw, 2rem);
   }
 }
 
@@ -335,6 +344,7 @@
 
   .about__layout {
     gap: 2.5rem;
+    grid-template-columns: 1fr;
   }
 
   .about__portrait {

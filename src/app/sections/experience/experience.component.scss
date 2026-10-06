@@ -7,7 +7,7 @@
     }
 
     .experience__container {
-    width: var(--content-width);
+    width: 100%;
     margin: 0 auto;
 }
 
@@ -407,12 +407,41 @@
         gap: 1.25rem;
     }
 
+    .experience__item {
+        grid-template-columns: 2.5rem minmax(0, 1fr);
+
+        gap: 1rem;
+    }
+
+    .experience__index {
+        padding-top: 1.4rem;
+    }
+
+    .experience__index span {
+        width: 2.4rem;
+        height: 2.4rem;
+
+        font-size: 0.64rem;
+    }
+
+    .experience__timeline::before {
+        left: 1.2rem;
+    }
+
+    .experience__content {
+        padding: 1.4rem;
+    }
+
     .experience__main {
         grid-template-columns: 1fr;
 
         gap: 1.4rem;
     }
+
+    .experience__meta {
+        margin-bottom: 1.1rem;
     }
+}
 
     /* ========================================
     MOBILE
@@ -503,6 +532,73 @@
     .experience__item:hover .experience__content,
     .experience__item:hover .experience__index span {
         transform: none;
+    }
+}
+
+@media (max-width: 380px) {
+    .experience__timeline::before {
+        left: 0.8rem;
+    }
+
+    .experience__item {
+        grid-template-columns: 1.6rem minmax(0, 1fr);
+
+        gap: 0.7rem;
+    }
+
+    .experience__index {
+        padding-top: 1.25rem;
+    }
+
+    .experience__index span {
+        width: 1.6rem;
+        height: 1.6rem;
+
+        font-size: 0.52rem;
+
+        box-shadow:
+        0 0 0 3px var(--bg-main),
+        0 0 14px rgba(109, 162, 255, 0.08);
+    }
+
+    .experience__content {
+        padding: 1rem;
+
+        border-radius: 1rem;
+    }
+
+    .experience__content::before {
+        top: 1.45rem;
+        left: -0.32rem;
+
+        width: 0.6rem;
+        height: 0.6rem;
+    }
+
+    .experience__heading h3 {
+        font-size: 1.35rem;
+    }
+
+    .experience__organization {
+        font-size: 0.82rem;
+    }
+
+    .experience__period {
+        font-size: 0.7rem;
+    }
+
+    .experience__description {
+        font-size: 0.88rem;
+    }
+
+    .experience__technologies {
+        gap: 0.4rem;
+    }
+
+    .experience__technologies li {
+        padding: 0.35rem 0.55rem;
+
+        font-size: 0.7rem;
     }
 }
 

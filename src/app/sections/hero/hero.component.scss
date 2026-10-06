@@ -952,25 +952,35 @@
   .hero {
     min-height: auto;
 
-    padding-top: 3rem;
+    padding: 3rem 0 5rem;
   }
 
   .hero__container {
     grid-template-columns: 1fr;
 
-    gap: 3.5rem;
+    gap: 3rem;
   }
 
   .hero__content {
-    max-width: 760px;
+    max-width: 720px;
   }
 
   .hero__headline {
-    max-width: 14ch;
+    max-width: 13ch;
+
+    font-size: clamp(3.4rem, 8vw, 4.6rem);
+  }
+
+  .hero__description {
+    max-width: 56ch;
   }
 
   .hero__dashboard {
-    width: min(100%, 720px);
+    width: min(100%, 680px);
+  }
+
+  .hero__scroll {
+    display: none;
   }
 }
 
@@ -1122,19 +1132,69 @@
 
 @media (max-width: 380px) {
   .hero__headline {
-    font-size: 2.4rem;
+    font-size: 2.35rem;
+  }
+
+  .hero__dashboard-body {
+    padding: 0.85rem;
   }
 
   .hero__stats {
-    grid-template-columns: 1fr;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+
+    gap: 0.5rem;
   }
 
   .hero__stat {
-    min-height: 90px;
+    min-height: 88px;
+
+    padding: 0.7rem;
+  }
+
+  .hero__stat-value {
+    font-size: 1.8rem;
+  }
+
+  .hero__stat-label {
+    font-size: 0.66rem;
+  }
+
+  .hero__production {
+    padding: 0.85rem;
   }
 
   .hero__production-header {
     flex-direction: column;
+
+    gap: 0.65rem;
+  }
+
+  .hero__dashboard-footer {
+    gap: 0.3rem;
+  }
+
+  .hero__dashboard-footer span {
+    padding: 0.28rem 0.4rem;
+
+    font-size: 0.56rem;
+  }
+
+  .about__portrait {
+    width: min(100%, 290px);
+
+    justify-self: center;
+  }
+
+  .about__header h2 {
+    font-size: 2.35rem;
+  }
+
+  .about__summary {
+    font-size: 1.55rem;
+  }
+
+  .about__areas {
+    margin-top: 0.25rem;
   }
 }
 
