@@ -2,77 +2,91 @@
     <div class="projects__container">
         <header class="projects__header">
         <p class="projects__kicker">Proyectos</p>
-        <h2>Trabajo destacado</h2>
+        <!--<h2>Trabajo real, de idea a producción</h2>-->
         </header>
 
-        <div class="projects__grid">
-            @for (project of projects; track project.title; let i = $index) {
-                <article class="project-card" [class.project-card--featured]="project.featured">
-                    <div class="project-card__layout">
-                        <div class="project-card__content">
-                            <p class="project-card__type">
-                            {{ project.type }}
-                            </p>
+        <div class="projects__list">
+        @for (project of projects; track project.title; let i = $index) {
+            <article
+            class="project-case"
+            [class.project-case--featured]="project.featured"
+            >
+            <div class="project-case__meta">
+                <span class="project-case__number">
+                {{ project.number }}
+                </span>
 
-                            <h3>{{ project.title }}</h3>
-                            <button
-                            class="project-card__toggle"
-                            type="button"
-                            [attr.aria-expanded]="openProjectIndex === i"
-                            (click)="toggleProject(i)"
-                            >
-                                <span>
-                                    {{ openProjectIndex === i ? 'Ocultar proyecto' : 'Explorar proyecto' }}
-                                </span>
+                <span class="project-case__type">
+                {{ project.type }}
+                </span>
+            </div>
 
-                                <span
-                                    class="project-card__toggle-arrow"
-                                    [class.project-card__toggle-arrow--open]="openProjectIndex === i"
-                                    aria-hidden="true"
-                                >
-                                    ↓
-                                </span>
-                            </button>
-                            
-                            <div
-                            class="project-card__details"
-                            [class.project-card__details--open]="openProjectIndex === i"
-                            >
+            <div class="project-case__layout">
+                <div class="project-case__content">
+                <h3>{{ project.title }}</h3>
 
-                                <p class="project-card__description">
-                                {{ project.description }}
-                                </p>
-                                <ul
-                                class="project-card__technologies"
-                                aria-label="Tecnologías utilizadas"
-                                >
-                                @for (technology of project.technologies; track technology) {
-                                    <li>{{ technology }}</li>
-                                }
-                                </ul>
+                <p class="project-case__description">
+                    {{ project.description }}
+                </p>
 
-                                <div class="project-card__actions">
-                                <a
-                                    class="project-card__link"
-                                    [href]="project.repositoryUrl"
-                                    target="_blank"
-                                    rel="noopener noreferrer"
-                                >
-                                    Ver repositorio
-                                </a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="project-card__media">
-                            <img
-                            [src]="project.image"
-                            [alt]="'Captura del proyecto ' + project.title"
-                            loading="lazy"
-                            />
-                        </div>
+                <ul
+                    class="project-case__technologies"
+                    aria-label="Tecnologías utilizadas"
+                >
+                    @for (technology of project.technologies; track technology) {
+                    <li>{{ technology }}</li>
+                    }
+                </ul>
+
+                <div class="project-case__actions">
+                    <a
+                    class="project-case__link project-case__link--primary"
+                    [href]="project.liveUrl"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    >
+                    Ver sitio
+                    <span aria-hidden="true">↗</span>
+                    </a>
+
+                    @if (project.repositoryUrl) {
+                    <a
+                        class="project-case__link"
+                        [href]="project.repositoryUrl"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
+                        Ver código
+                        <span aria-hidden="true">↗</span>
+                    </a>
+                    }
+                </div>
+
+                <div class="project-case__highlights">
+                    @for (highlight of project.highlights; track highlight.label) {
+                    <div class="project-case__highlight">
+                        <span class="project-case__highlight-label">
+                        {{ highlight.label }}
+                        </span>
+
+                        <span class="project-case__highlight-value">
+                        {{ highlight.value }}
+                        </span>
                     </div>
-                </article>
-            }
+                    }
+                </div>
+                </div>
+
+                <div class="project-case__media">
+                <img
+                    [src]="project.image"
+                    [alt]="'Vista del proyecto ' + project.title"
+                    loading="lazy"
+                />
+                </div>
+            </div>
+            </article>
+        }
         </div>
     </div>
 </section>

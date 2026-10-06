@@ -1,47 +1,84 @@
-<section class="contact" id="contacto" appRevealOnScroll>
+<section
+    class="contact"
+    id="contacto"
+    aria-labelledby="contact-title"
+    appRevealOnScroll
+    >
     <div class="contact__container">
-        <div class="contact__content">
-        <p class="contact__kicker">Contacto</p>
-
-        <h2>¿Hablamos?</h2>
-
-        <p class="contact__description">
-            Estoy abierto a oportunidades como desarrollador web junior y a participar
-            en proyectos donde pueda seguir creciendo profesionalmente.
+        <div class="contact__main">
+        <p class="contact__kicker">
+            Contacto
         </p>
 
+        <h2 id="contact-title">
+            ¿Hablamos?
+        </h2>
+
+        <p class="contact__description">
+            Actualmente estoy abierto a oportunidades profesionales en desarrollo
+            web, especialmente con Angular, TypeScript, Java y Spring Boot.
+        </p>
+
+        <a
+            class="contact__email"
+            [href]="'mailto:' + email"
+        >
+            {{ email }}
+            <span aria-hidden="true">↗</span>
+        </a>
+
         <div class="contact__actions">
-            <a class="contact__primary" [href]="'mailto:' + email">
+            <a
+            class="contact__primary"
+            [href]="'mailto:' + email"
+            >
             Escríbeme
+            <span aria-hidden="true">↗</span>
             </a>
 
             <a
-                class="contact__secondary"
-                href="cv\raul-baron-gomez-cv.pdf"
-                download
+            class="contact__secondary"
+            href="cv/raul-baron-gomez-cv.pdf"
+            download
             >
-                Descargar CV
-            </a>
-
-            <a class="contact__email" [href]="'mailto:' + email">
-            {{ email }}
+            Descargar CV
+            <span aria-hidden="true">↓</span>
             </a>
         </div>
         </div>
 
-        <div class="contact__details">
-        <div class="contact__detail">
-            <span class="contact__label">Ubicación</span>
-            <p>Madrid, España</p>
+        <div class="contact__info">
+        <div class="contact__info-item">
+            <span class="contact__label">
+            Ubicación
+            </span>
+
+            <p>
+            Madrid, España
+            </p>
         </div>
 
-        <div class="contact__detail">
-            <span class="contact__label">Disponibilidad</span>
-            <p>Abierto a oportunidades junior</p>
+        <div class="contact__info-item">
+            <span class="contact__label">
+            Disponibilidad
+            </span>
+
+            <div class="contact__availability">
+            <span
+                class="contact__availability-dot"
+                aria-hidden="true"
+            ></span>
+
+            <p>
+                Abierto a nuevas oportunidades
+            </p>
+            </div>
         </div>
 
-        <div class="contact__detail">
-            <span class="contact__label">Perfiles</span>
+        <div class="contact__info-item">
+            <span class="contact__label">
+            Perfiles
+            </span>
 
             <div class="contact__socials">
             @for (social of socialLinks; track social.label) {
@@ -51,6 +88,7 @@
                 rel="noopener noreferrer"
                 >
                 {{ social.label }}
+                <span aria-hidden="true">↗</span>
                 </a>
             }
             </div>

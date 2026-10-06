@@ -61,27 +61,15 @@ export class NavbarComponent implements AfterViewInit, OnDestroy {
     this.observer = new IntersectionObserver(
       (entries) => {
         for (const entry of entries) {
-          const sectionId = entry.target.id;
-
           if (entry.isIntersecting) {
-            this.visibleSections.set(sectionId, entry.intersectionRatio);
-          } else {
-            this.visibleSections.delete(sectionId);
+            this.activeSectionId = entry.target.id;
           }
-        }
-
-        const mostVisibleSection = [...this.visibleSections.entries()].sort(
-          (firstSection, secondSection) => secondSection[1] - firstSection[1]
-        )[0];
-
-        if (mostVisibleSection) {
-          this.activeSectionId = mostVisibleSection[0];
         }
       },
       {
         root: null,
-        rootMargin: '-25% 0px -45% 0px',
-        threshold: [0.2, 0.35, 0.5, 0.65]
+        rootMargin: '-20% 0px -75% 0px',
+        threshold: 0
       }
     );
 

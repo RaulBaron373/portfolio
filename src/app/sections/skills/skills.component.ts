@@ -9,30 +9,25 @@ import { RevealOnScrollDirective } from '../../shared/directives/reveal-on-scrol
   styleUrl: './skills.component.scss'
 })
 export class SkillsComponent {
-  openGroupIndex: number | null = null;
-
-  toggleGroup(index: number): void {
-    this.openGroupIndex = this.openGroupIndex === index ? null : index;
-  }
   readonly skillGroups = [
     {
+      number: '01',
       title: 'Frontend',
-      icon: '/images/skills/frontend.png',
       skills: ['Angular', 'TypeScript', 'HTML', 'SCSS']
     },
     {
+      number: '02',
       title: 'Backend',
-      icon: '/images/skills/backend.png',
       skills: ['Java', 'Spring Boot', 'REST API', 'JWT']
     },
     {
+      number: '03',
       title: 'Bases de datos',
-      icon: '/images/skills/bases-de-datos.png',
       skills: ['MySQL', 'SQL']
     },
     {
+      number: '04',
       title: 'Herramientas',
-      icon: '/images/skills/herramientas.png',
       skills: ['Git', 'GitHub', 'Figma', 'WordPress', 'JHipster']
     }
   ] as const;
