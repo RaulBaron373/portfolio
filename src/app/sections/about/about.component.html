@@ -1,48 +1,67 @@
-<section class="about" id="sobre-mi" aria-labelledby="about-title" appRevealOnScroll>
-  <div class="about__intro">
+<section
+  class="about"
+  id="sobre-mi"
+  aria-labelledby="about-title"
+  appRevealOnScroll
+>
+  <div class="about__header">
+    <p class="about__kicker">Sobre mí</p>
 
-    <h2 class="about__kicker">Sobre mí</h2>
+    <!--<h2 id="about-title">
+      Perfil Full Stack con foco en
+      <span>desarrollo web.</span>
+    </h2>-->
+  </div>
 
+  <div class="about__layout">
     <div
       class="about__portrait"
-      [style.background-image]="'linear-gradient(180deg, rgba(109, 162, 255, 0.12), rgba(143, 114, 255, 0.1)), url(' + profileImagePath + ')'"
+      [style.background-image]="
+        'linear-gradient(180deg, rgba(109, 162, 255, 0.08), rgba(143, 114, 255, 0.12)), url(' +
+        profileImagePath +
+        ')'
+      "
       role="img"
       aria-label="Foto profesional de Raúl Barón Gómez"
     ></div>
 
-    <!-- <h2 id="about-title">Sobre mí</h2> -->
-    <p class="about__profile">Desarrollador Full Stack Junior</p>
-    <p class="about__summary">
-      Desarrollo aplicaciones web combinando frontend, backend y gestión de datos, con especial foco en Angular, TypeScript, Java y Spring Boot.
-    </p>
-  </div>
+    <div class="about__content">
+      <div class="about__intro">
+        <p class="about__role">
+          Full Stack Developer
+        </p>
 
-  <button
-    class="about__details-toggle"
-    type="button"
-    [attr.aria-expanded]="isDetailsOpen"
-    aria-controls="about-details"
-    (click)="toggleDetails()"
-  >
-    <span>
-      {{ isDetailsOpen ? 'Ocultar detalles' : 'Ver detalles' }}
-    </span>
+        <p class="about__summary">
+          Trabajo principalmente con Angular, TypeScript, Java y Spring Boot,
+          desarrollando tanto frontend como backend.
+        </p>
 
-    <span
-      class="about__details-arrow"
-      [class.about__details-arrow--open]="isDetailsOpen"
-      aria-hidden="true"
-    >
-      ↓
-    </span>
-  </button>
-
-  <dl class="about__facts" id="about-details" [class.about__facts--open]="isDetailsOpen">
-    @for (fact of facts; track fact.label) {
-      <div class="about__fact">
-        <dt>{{ fact.label }}</dt>
-        <dd>{{ fact.value }}</dd>
+        <p class="about__description">
+          En mis proyectos he trabajado con interfaces responsive, APIs REST,
+          bases de datos, autenticación y despliegue, buscando mantener una
+          arquitectura clara y un código que pueda entender, mantener y explicar.
+        </p>
       </div>
-    }
-  </dl>
+
+      <div class="about__areas">
+        @for (area of areas; track area.number) {
+          <div class="about__area">
+            <span class="about__area-number">
+              {{ area.number }}
+            </span>
+
+            <div class="about__area-content">
+              <span class="about__area-label">
+                {{ area.label }}
+              </span>
+
+              <span class="about__area-value">
+                {{ area.value }}
+              </span>
+            </div>
+          </div>
+        }
+      </div>
+    </div>
+  </div>
 </section>

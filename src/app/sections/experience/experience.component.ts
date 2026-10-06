@@ -9,14 +9,9 @@ import { RevealOnScrollDirective } from '../../shared/directives/reveal-on-scrol
   styleUrl: './experience.component.scss'
 })
 export class ExperienceComponent {
-  openedItemIndex: number | null = null;
-
-  toggleItem(index: number): void {
-    this.openedItemIndex = this.openedItemIndex === index ? null : index;
-  }
-  
   readonly experienceItems = [
     {
+      number: '01',
       type: 'Experiencia',
       title: 'Desarrollador Web en prácticas',
       organization: 'SmartBits Business IT Solutions',
@@ -26,6 +21,7 @@ export class ExperienceComponent {
       technologies: ['WordPress', 'BeTheme', 'Figma', 'PHP', 'TypeScript']
     },
     {
+      number: '02',
       type: 'Formación',
       title: 'Técnico Superior en Desarrollo de Aplicaciones Web',
       organization: 'CESUR',
@@ -35,6 +31,7 @@ export class ExperienceComponent {
       technologies: ['Angular', 'TypeScript', 'Java', 'Spring Boot', 'MySQL']
     },
     {
+      number: '03',
       type: 'Formación',
       title: 'Bootcamp Full Stack',
       organization: 'Bootcamp Nicolás Salgado',

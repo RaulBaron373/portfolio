@@ -1,149 +1,192 @@
 <section class="hero" id="inicio">
-  <div class="hero__content">
-    <p class="hero__role">{{ profile.role }}</p>
-    <h1>
-      Raúl Barón
-      <span class="hero__surname">Gómez</span>
-    </h1>
-    <p class="hero__stack">{{ profile.stack }}</p>
-    <p class="hero__description">{{ profile.description }}</p>
-
-    <div class="hero__actions">
-      <a
-        class="hero__cta hero__cta--primary"
-        [href]="projectsUrl"
-        target="_blank"
-        rel="noopener noreferrer"
-      >
-        Ver proyectos
-      </a>
-
-      <a class="hero__cta hero__cta--secondary" href="cv/raul-baron-gomez-cv.pdf" download>
-        Descargar CV
-      </a>
-    </div>
-
-    <div class="hero__social" aria-label="Enlaces profesionales">
-      <a
-        class="hero__social-link"
-        [href]="githubUrl"
-        target="_blank"
-        rel="noopener noreferrer"
-        aria-label="GitHub"
-      >
-        <svg viewBox="0 0 24 24" aria-hidden="true">
-          <path
-            d="M12 0C5.37 0 0 5.37 0 12c0 5.3 3.44 9.8 8.2 11.39.6.11.82-.26.82-.58 0-.29-.01-1.04-.02-2.05-3.34.73-4.05-1.61-4.05-1.61-.55-1.39-1.33-1.76-1.33-1.76-1.09-.74.08-.72.08-.72 1.2.08 1.83 1.24 1.83 1.24 1.08 1.83 2.82 1.3 3.5 1 .11-.78.42-1.31.76-1.61-2.66-.3-5.47-1.33-5.47-5.93 0-1.31.47-2.39 1.23-3.24-.12-.31-.53-1.52.12-3.17 0 0 1.01-.32 3.3 1.24A11.4 11.4 0 0 1 12 5.8c1.02 0 2.05.14 3.01.41 2.29-1.56 3.29-1.24 3.29-1.24.66 1.65.25 2.86.12 3.17.77.85 1.23 1.93 1.23 3.24 0 4.61-2.81 5.62-5.49 5.92.43.38.82 1.12.82 2.27 0 1.64-.01 2.97-.01 3.37 0 .32.22.7.83.58A12.01 12.01 0 0 0 24 12c0-6.63-5.37-12-12-12Z"
-          />
-        </svg>
-        <span class="hero__sr-only">GitHub</span>
-      </a>
-
-      <a
-        class="hero__social-link"
-        [href]="linkedInUrl"
-        target="_blank"
-        rel="noopener noreferrer"
-        aria-label="LinkedIn"
-      >
-        <svg viewBox="0 0 24 24" aria-hidden="true">
-          <path
-            d="M4.98 3.5A2.49 2.49 0 0 0 2.5 6c0 1.38 1.1 2.5 2.48 2.5h.02A2.5 2.5 0 1 0 4.98 3.5ZM2.9 9.5h4.18V21H2.9V9.5Zm6.61 0h4.01v1.57h.06c.56-1.06 1.94-2.18 3.99-2.18 4.27 0 5.06 2.81 5.06 6.46V21h-4.18v-4.94c0-1.18-.02-2.69-1.64-2.69-1.64 0-1.89 1.28-1.89 2.6V21H9.51V9.5Z"
-          />
-        </svg>
-        <span class="hero__sr-only">LinkedIn</span>
-      </a>
-    </div>
-  </div>
-
-  <div class="hero__visual" aria-hidden="true">
+  <div class="hero__background" aria-hidden="true">
+    <div class="hero__grid"></div>
     <div class="hero__glow hero__glow--blue"></div>
     <div class="hero__glow hero__glow--violet"></div>
+  </div>
 
-    <div class="hero__panel">
-      <div class="hero__panel-bar">
-        <div class="hero__panel-dots">
-          <span></span>
-          <span></span>
-          <span></span>
-        </div>
-        <span class="hero__panel-title">portfolio.ts</span>
+  <div class="hero__container">
+    <div class="hero__content">
+      <div class="hero__eyebrow">
+        <span class="hero__status-dot" aria-hidden="true"></span>
+        <span>{{ profile.eyebrow }}</span>
       </div>
 
-      <div class="hero__code">
-        <div class="hero__code-line">
-          <span class="hero__code-number">01</span>
-          <span class="hero__code-text">
-            <span class="hero__token hero__token--keyword">const</span>
-            <span class="hero__token hero__token--variable">profile</span>
-            <span class="hero__token hero__token--plain">=</span>
-            <span class="hero__token hero__token--plain">{{ '{' }}</span>
-          </span>
-        </div>
+      <h1 class="hero__title">
+        <span class="hero__name">Raúl Barón Gómez</span>
 
-        <div class="hero__code-line">
-          <span class="hero__code-number">02</span>
-          <span class="hero__code-text">
-            <span class="hero__token hero__token--variable">role</span>
-            <span class="hero__token hero__token--plain">:</span>
-            <span class="hero__token hero__token--string">'Full Stack Junior'</span>
-            <span class="hero__token hero__token--plain">,</span>
+        <span class="hero__headline">
+          Desarrollo web de
+          <span class="hero__headline-accent">
+            principio a fin.
           </span>
-        </div>
+        </span>
+      </h1>
 
-        <div class="hero__code-line">
-          <span class="hero__code-number">03</span>
-          <span class="hero__code-text">
-            <span class="hero__token hero__token--variable">frontend</span>
-            <span class="hero__token hero__token--plain">:</span>
-            <span class="hero__token hero__token--plain">[</span>
-            <span class="hero__token hero__token--string">'Angular'</span>
-            <span class="hero__token hero__token--plain">,</span>
-            <span class="hero__token hero__token--string">'TypeScript'</span>
-            <span class="hero__token hero__token--plain">],</span>
-          </span>
-        </div>
+      <p class="hero__description">
+        {{ profile.description }}
+      </p>
 
-        <div class="hero__code-line">
-          <span class="hero__code-number">04</span>
-          <span class="hero__code-text">
-            <span class="hero__token hero__token--variable">backend</span>
-            <span class="hero__token hero__token--plain">:</span>
-            <span class="hero__token hero__token--plain">[</span>
-            <span class="hero__token hero__token--string">'Java'</span>
-            <span class="hero__token hero__token--plain">,</span>
-            <span class="hero__token hero__token--string">'Spring Boot'</span>
-            <span class="hero__token hero__token--plain">],</span>
-          </span>
-        </div>
+      <p class="hero__stack">
+        {{ profile.stack }}
+      </p>
 
-        <div class="hero__code-line">
-          <span class="hero__code-number">05</span>
-          <span class="hero__code-text">
-            <span class="hero__token hero__token--plain">{{ '}' }}</span>
-            <span class="hero__token hero__token--keyword">as const</span>
-            <span class="hero__token hero__token--plain">;</span>
-          </span>
-        </div>
+      <div class="hero__actions">
+        <a
+          class="hero__cta hero__cta--primary"
+          [href]="projectsUrl"
+        >
+          Ver proyectos
+          <span aria-hidden="true">↓</span>
+        </a>
 
-        <div class="hero__code-line">
-          <span class="hero__code-number">06</span>
-          <span class="hero__code-text">
-            <span class="hero__token hero__token--keyword">type</span>
-            <span class="hero__token hero__token--variable">Profile</span>
-            <span class="hero__token hero__token--plain">=</span>
-            <span class="hero__token hero__token--keyword">typeof</span>
-            <span class="hero__token hero__token--variable">profile</span>
-            <span class="hero__token hero__token--plain">;</span>
-            <span class="hero__cursor"></span>
-          </span>
-        </div>
+        <a
+          class="hero__cta hero__cta--secondary"
+          href="cv/raul-baron-gomez-cv.pdf"
+          download
+        >
+          Descargar CV
+        </a>
       </div>
 
-      <div class="hero__terminal">
-        <span class="hero__terminal-label">status</span>
-        <span class="hero__terminal-value">frontend + api + data</span>
+      <div class="hero__footer">
+        <div class="hero__availability">
+          <span class="hero__availability-dot" aria-hidden="true"></span>
+          <span>{{ profile.status }}</span>
+        </div>
+
+        <div class="hero__social" aria-label="Enlaces profesionales">
+          <a
+            class="hero__social-link"
+            [href]="githubUrl"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            GitHub
+            <span aria-hidden="true">↗</span>
+          </a>
+
+          <a
+            class="hero__social-link"
+            [href]="linkedInUrl"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            LinkedIn
+            <span aria-hidden="true">↗</span>
+          </a>
+        </div>
       </div>
     </div>
+
+    <div class="hero__dashboard">
+      <div class="hero__dashboard-window">
+        <div class="hero__dashboard-bar">
+          <div class="hero__dashboard-dots" aria-hidden="true">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+
+          <span class="hero__dashboard-title">
+            developer.workspace
+          </span>
+
+          <span class="hero__dashboard-status">
+            ONLINE
+          </span>
+        </div>
+
+        <div class="hero__dashboard-body">
+          <div class="hero__dashboard-intro">
+            <span class="hero__dashboard-label">
+              PROFILE STATUS
+            </span>
+
+            <div class="hero__dashboard-availability">
+              <span class="hero__dashboard-live-dot" aria-hidden="true"></span>
+              {{ profile.status }}
+            </div>
+          </div>
+
+          <div class="hero__stats">
+            @for (stat of stats; track stat.label) {
+              <div class="hero__stat">
+                <span class="hero__stat-value">
+                  {{ stat.value }}
+                </span>
+
+                <span class="hero__stat-label">
+                  {{ stat.label }}
+                </span>
+              </div>
+            }
+          </div>
+
+          <div class="hero__production">
+            <div class="hero__production-header">
+              <div>
+                <span class="hero__dashboard-label">
+                  LATEST PRODUCTION
+                </span>
+
+                <h2>
+                  {{ productionProject.name }}
+                </h2>
+              </div>
+
+              <span class="hero__production-status">
+                <span aria-hidden="true"></span>
+                {{ productionProject.status }}
+              </span>
+            </div>
+
+            <a
+              class="hero__production-domain"
+              [href]="productionProject.url"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              {{ productionProject.domain }}
+
+              <span aria-hidden="true">↗</span>
+            </a>
+
+            <p class="hero__production-stack">
+              {{ productionProject.stack }}
+            </p>
+
+            <div class="hero__deployment">
+              <div class="hero__deployment-meta">
+                <span>production</span>
+                <span>deployed</span>
+              </div>
+
+              <div class="hero__deployment-track">
+                <span></span>
+              </div>
+            </div>
+          </div>
+
+          <div class="hero__dashboard-footer">
+            <span>frontend</span>
+            <span>api</span>
+            <span>database</span>
+            <span>deploy</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="hero__dashboard-glow" aria-hidden="true"></div>
+    </div>
   </div>
+
+  <a
+    class="hero__scroll"
+    href="#sobre-mi"
+    aria-label="Ir a la sección Sobre mí"
+  >
+    <span>Scroll</span>
+    <span aria-hidden="true">↓</span>
+  </a>
 </section>

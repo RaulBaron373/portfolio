@@ -240,12 +240,18 @@ svg {
   will-change: auto;
 }
 
-@media (prefers-reduced-motion: reduce) {
-  .reveal-on-scroll,
-  .reveal-on-scroll.is-revealed {
-    opacity: 1;
-    transform: none;
-    transition: none;
-    will-change: auto;
+  @media (prefers-reduced-motion: reduce) {
+    .reveal-on-scroll,
+    .reveal-on-scroll.is-revealed {
+      opacity: 1;
+      transform: none;
+      transition: none;
+      will-change: auto;
+  }
+
+  @media (max-width: 380px) {
+    :root {
+      --content-gutter: 0.75rem;
+    }
   }
 }

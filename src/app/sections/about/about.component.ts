@@ -11,36 +11,26 @@ import { RevealOnScrollDirective } from '../../shared/directives/reveal-on-scrol
 export class AboutComponent {
   readonly profileImagePath = '/images/profile.jpg';
 
-  isDetailsOpen = false;
-
-  toggleDetails(): void {
-    this.isDetailsOpen = !this.isDetailsOpen;
-  }
-
-  readonly facts = [
+  readonly areas = [
     {
-      label: 'Titulación',
-      value: 'Técnico Superior en Desarrollo de Aplicaciones Web'
+      number: '01',
+      label: 'Frontend',
+      value: 'Angular · TypeScript'
     },
     {
-      label: 'Ubicación',
-      value: 'Madrid, España'
+      number: '02',
+      label: 'Backend',
+      value: 'Java · Spring Boot'
     },
     {
-      label: 'Stack principal',
-      value: 'Angular · TypeScript · Java · Spring Boot'
-    },
-    {
-      label: 'Herramientas',
-      value: 'Git · GitHub · Figma · WordPress'
-    },
-    {
-      label: 'Bases de datos',
+      number: '03',
+      label: 'Datos',
       value: 'MySQL · SQL'
     },
     {
-      label: 'Disponibilidad',
-      value: 'Abierto a oportunidades junior'
+      number: '04',
+      label: 'Ubicación',
+      value: 'Madrid · España'
     }
   ] as const;
 }
