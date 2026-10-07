@@ -691,3 +691,26 @@
         transform: none;
     }
 }
+
+/* Liquid Glass refraction for the timeline surfaces and pills. */
+@supports (backdrop-filter: url("#liquid-glass-pill")) {
+  @supports not (-webkit-touch-callout: none) {
+    .experience__content {
+      backdrop-filter:
+        url("#liquid-glass-panel")
+        blur(5px)
+        saturate(130%)
+        brightness(1.025);
+    }
+
+    .experience__index span,
+    .experience__type,
+    .experience__technologies li {
+      backdrop-filter:
+        url("#liquid-glass-pill")
+        blur(3px)
+        saturate(136%)
+        brightness(1.04);
+    }
+  }
+}
