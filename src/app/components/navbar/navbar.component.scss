@@ -208,3 +208,26 @@
     justify-content: center;
   }
 }
+
+
+/* Progressive enhancement: optical refraction for Chromium-class browsers.
+   Safari keeps the CSS glass fallback because SVG backdrop filters are unreliable there. */
+@supports (backdrop-filter: url("#liquid-glass-pill")) {
+  @supports not (-webkit-touch-callout: none) {
+    .navbar__container {
+      backdrop-filter:
+        url("#liquid-glass-panel")
+        blur(6px)
+        saturate(135%)
+        brightness(1.03);
+    }
+
+    .navbar__link--active {
+      backdrop-filter:
+        url("#liquid-glass-pill")
+        blur(4px)
+        saturate(138%)
+        brightness(1.04);
+    }
+  }
+}
