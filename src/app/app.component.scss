@@ -15,3 +15,12 @@
   width: var(--content-width);
   margin: 0 auto;
 }
+
+
+.liquid-glass-filters {
+  position: absolute;
+  width: 0;
+  height: 0;
+  overflow: hidden;
+  pointer-events: none;
+}

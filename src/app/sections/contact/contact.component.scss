@@ -114,32 +114,36 @@
 .contact__actions {
     display: flex;
     flex-wrap: wrap;
-
     gap: 0.85rem;
-
     margin-top: 2rem;
 }
 
 .contact__primary,
 .contact__secondary {
     min-height: 48px;
-
     display: inline-flex;
     align-items: center;
     justify-content: center;
-
-    gap: 0.6rem;
-
     padding: 0.8rem 1.3rem;
-
+    border: 1px solid rgba(218, 226, 255, 0.16);
     border-radius: var(--radius-pill);
-
+    background:
+        linear-gradient(
+            180deg,
+            rgba(255, 255, 255, 0.06),
+            rgba(255, 255, 255, 0.014) 60%,
+            rgba(109, 162, 255, 0.014)
+        ),
+        rgba(8, 14, 29, 0.28);
+    -webkit-backdrop-filter: blur(9px) saturate(125%);
+    backdrop-filter: blur(9px) saturate(125%);
+    box-shadow:
+        0 12px 30px rgba(0, 0, 0, 0.12),
+        inset 0 1px 0 rgba(255, 255, 255, 0.08);
     color: var(--text-main);
-
     font-size: 0.9rem;
     font-weight: 700;
     text-decoration: none;
-
     transition:
         transform 0.22s ease,
         border-color 0.22s ease,
@@ -147,49 +151,50 @@
         box-shadow 0.22s ease;
 }
 
-.contact__primary span,
-.contact__secondary span {
-    transition: transform 0.22s ease;
-}
-
 .contact__primary {
-    border: 1px solid transparent;
-
-    background: var(--gradient-primary);
-
-    box-shadow: var(--shadow-accent);
+    border-color: rgba(255, 255, 255, 0.2);
+    background:
+        linear-gradient(
+            180deg,
+            rgba(255, 255, 255, 0.18),
+            rgba(255, 255, 255, 0.025) 48%,
+            rgba(255, 255, 255, 0.012)
+        ),
+        linear-gradient(
+            135deg,
+            rgba(109, 162, 255, 0.6),
+            rgba(143, 114, 255, 0.5)
+        ),
+        rgba(8, 14, 29, 0.18);
+    box-shadow:
+        0 16px 30px rgba(92, 112, 255, 0.16),
+        inset 0 1px 0 rgba(255, 255, 255, 0.24),
+        inset 0 -1px 0 rgba(255, 255, 255, 0.04);
 }
 
 .contact__primary:hover,
 .contact__primary:focus-visible {
     transform: translateY(-2px);
-
-    box-shadow: var(--shadow-accent-hover);
-}
-
-.contact__primary:hover span,
-.contact__primary:focus-visible span {
-    transform: translate(2px, -2px);
-}
-
-.contact__secondary {
-    border: 1px solid rgba(173, 189, 255, 0.16);
-
-    background: rgba(255, 255, 255, 0.025);
+    border-color: rgba(255, 255, 255, 0.28);
+    box-shadow:
+        0 20px 36px rgba(92, 112, 255, 0.22),
+        inset 0 1px 0 rgba(255, 255, 255, 0.28);
 }
 
 .contact__secondary:hover,
 .contact__secondary:focus-visible {
     transform: translateY(-2px);
-
-    border-color: rgba(109, 162, 255, 0.32);
-
-    background: rgba(109, 162, 255, 0.07);
-}
-
-.contact__secondary:hover span,
-.contact__secondary:focus-visible span {
-    transform: translateY(2px);
+    border-color: rgba(218, 226, 255, 0.26);
+    background:
+        linear-gradient(
+            180deg,
+            rgba(255, 255, 255, 0.085),
+            rgba(109, 162, 255, 0.035)
+        ),
+        rgba(10, 18, 36, 0.32);
+    box-shadow:
+        0 16px 32px rgba(0, 0, 0, 0.16),
+        inset 0 1px 0 rgba(255, 255, 255, 0.11);
 }
 
 /* ========================================
@@ -198,25 +203,39 @@
 
 .contact__info {
     position: relative;
-
     display: grid;
 
     padding: clamp(1.6rem, 3vw, 2rem);
 
-    border: 1px solid rgba(173, 189, 255, 0.13);
+    border: 1px solid rgba(218, 226, 255, 0.19);
     border-radius: 1.4rem;
 
     background:
-        radial-gradient(
-        circle at top right,
-        rgba(109, 162, 255, 0.07),
-        transparent 38%
+        linear-gradient(
+            180deg,
+            rgba(255, 255, 255, 0.055),
+            rgba(255, 255, 255, 0.008) 48%,
+            rgba(109, 162, 255, 0.016)
         ),
-        rgba(255, 255, 255, 0.018);
+        radial-gradient(
+            circle at 14% 0%,
+            rgba(255, 255, 255, 0.07),
+            transparent 35%
+        ),
+        radial-gradient(
+            circle at top right,
+            rgba(109, 162, 255, 0.065),
+            transparent 42%
+        ),
+        rgba(10, 18, 36, 0.27);
+
+    -webkit-backdrop-filter: blur(10px) saturate(125%);
+    backdrop-filter: blur(10px) saturate(125%);
 
     box-shadow:
-        0 24px 55px rgba(0, 0, 0, 0.14),
-        inset 0 1px 0 rgba(255, 255, 255, 0.025);
+        0 22px 52px rgba(0, 0, 0, 0.14),
+        inset 0 1px 0 rgba(255, 255, 255, 0.13),
+        inset 0 -1px 0 rgba(255, 255, 255, 0.018);
 }
 
 .contact__info-item {
@@ -301,14 +320,27 @@
     display: inline-flex;
     align-items: center;
 
-    gap: 0.4rem;
-
     padding: 0.5rem 0.75rem;
 
-    border: 1px solid rgba(173, 189, 255, 0.13);
+    border: 1px solid rgba(218, 226, 255, 0.19);
     border-radius: var(--radius-pill);
 
-    background: rgba(255, 255, 255, 0.02);
+    background:
+        linear-gradient(
+            180deg,
+            rgba(255, 255, 255, 0.09),
+            rgba(255, 255, 255, 0.016) 58%,
+            rgba(109, 162, 255, 0.018)
+        ),
+        rgba(8, 14, 29, 0.24);
+
+    -webkit-backdrop-filter: blur(7px) saturate(120%);
+    backdrop-filter: blur(7px) saturate(120%);
+
+    box-shadow:
+        inset 0 1px 0 rgba(255, 255, 255, 0.13),
+        inset 0 -1px 0 rgba(255, 255, 255, 0.015),
+        0 7px 18px rgba(0, 0, 0, 0.07);
 
     color: var(--text-secondary);
 
@@ -320,7 +352,8 @@
         transform 0.2s ease,
         border-color 0.2s ease,
         background-color 0.2s ease,
-        color 0.2s ease;
+        color 0.2s ease,
+        box-shadow 0.2s ease;
 }
 
 .contact__socials a span {
@@ -331,12 +364,22 @@
 .contact__socials a:focus-visible {
     transform: translateY(-2px);
 
-    border-color: rgba(109, 162, 255, 0.32);
+    border-color: rgba(226, 233, 255, 0.29);
 
-    background: rgba(109, 162, 255, 0.07);
+    background:
+        linear-gradient(
+            180deg,
+            rgba(255, 255, 255, 0.12),
+            rgba(109, 162, 255, 0.04)
+        ),
+        rgba(9, 17, 34, 0.3);
 
     color: var(--text-main);
-    }
+
+    box-shadow:
+        inset 0 1px 0 rgba(255, 255, 255, 0.17),
+        0 10px 22px rgba(0, 0, 0, 0.1);
+}
 
     .contact__socials a:hover span,
     .contact__socials a:focus-visible span {
@@ -524,4 +567,27 @@
     .contact__socials a:hover {
         transform: none;
     }
+}
+
+/* Liquid Glass refraction for the contact panel, actions and social pills. */
+@supports (backdrop-filter: url("#liquid-glass-pill")) {
+  @supports not (-webkit-touch-callout: none) {
+    .contact__info {
+      backdrop-filter:
+        url("#liquid-glass-panel")
+        blur(1.25px)
+        saturate(140%)
+        brightness(1.05);
+    }
+
+    .contact__primary,
+    .contact__secondary,
+    .contact__socials a {
+      backdrop-filter:
+        url("#liquid-glass-pill")
+        blur(0.75px)
+        saturate(145%)
+        brightness(1.07);
+    }
+  }
 }

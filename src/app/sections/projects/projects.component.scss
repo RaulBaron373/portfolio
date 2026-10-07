@@ -101,10 +101,23 @@
 
     padding: 0.45rem 0.75rem;
 
-    border: 1px solid rgba(109, 162, 255, 0.2);
+    border: 1px solid var(--glass-border);
     border-radius: var(--radius-pill);
 
-    background: rgba(109, 162, 255, 0.06);
+    background:
+        linear-gradient(
+        180deg,
+        rgba(255, 255, 255, 0.085),
+        rgba(109, 162, 255, 0.035)
+        ),
+        rgba(10, 18, 36, 0.24);
+
+    -webkit-backdrop-filter: blur(7px) saturate(120%);
+    backdrop-filter: blur(7px) saturate(120%);
+
+    box-shadow:
+        inset 0 1px 0 rgba(255, 255, 255, 0.12),
+        0 8px 20px rgba(0, 0, 0, 0.08);
 
     color: var(--accent-blue);
 
@@ -245,10 +258,24 @@
 
     padding: 0.8rem 1.15rem;
 
-    border: 1px solid var(--surface-border);
+    border: 1px solid var(--glass-border);
     border-radius: var(--radius-pill);
 
-    background: rgba(255, 255, 255, 0.025);
+    background:
+        linear-gradient(
+        180deg,
+        rgba(255, 255, 255, 0.085),
+        rgba(255, 255, 255, 0.022) 58%,
+        rgba(109, 162, 255, 0.024)
+        ),
+        rgba(8, 14, 29, 0.28);
+
+    -webkit-backdrop-filter: blur(8px) saturate(120%);
+    backdrop-filter: blur(8px) saturate(120%);
+
+    box-shadow:
+        0 12px 28px rgba(0, 0, 0, 0.12),
+        inset 0 1px 0 rgba(255, 255, 255, 0.11);
 
     color: var(--text-main);
 
@@ -271,9 +298,19 @@
 .project-case__link:focus-visible {
     transform: translateY(-2px);
 
-    border-color: rgba(109, 162, 255, 0.4);
+    border-color: rgba(218, 226, 255, 0.3);
 
-    background: rgba(109, 162, 255, 0.08);
+    background:
+        linear-gradient(
+        180deg,
+        rgba(255, 255, 255, 0.12),
+        rgba(109, 162, 255, 0.055)
+        ),
+        rgba(10, 18, 36, 0.34);
+
+    box-shadow:
+        0 18px 36px rgba(0, 0, 0, 0.18),
+        inset 0 1px 0 rgba(255, 255, 255, 0.15);
 }
 
 .project-case__link:hover span,
@@ -282,18 +319,38 @@
 }
 
 .project-case__link--primary {
-    border-color: transparent;
-
-    background: var(--gradient-primary);
-
-    box-shadow: var(--shadow-accent);
+    border-color: rgba(255, 255, 255, 0.2);
+    background:
+        linear-gradient(180deg, rgba(255, 255, 255, 0.18), rgba(255, 255, 255, 0.025) 48%, rgba(255, 255, 255, 0.012)),
+        linear-gradient(135deg, rgba(109, 162, 255, 0.6), rgba(143, 114, 255, 0.5)),
+        rgba(8, 14, 29, 0.18);
+    box-shadow:
+        0 16px 30px rgba(92, 112, 255, 0.16),
+        inset 0 1px 0 rgba(255, 255, 255, 0.24),
+        inset 0 -1px 0 rgba(255, 255, 255, 0.04);
 }
 
 .project-case__link--primary:hover,
 .project-case__link--primary:focus-visible {
-    background: var(--gradient-primary);
+    border-color: rgba(255, 255, 255, 0.32);
 
-    box-shadow: var(--shadow-accent-hover);
+    background:
+        linear-gradient(
+        180deg,
+        rgba(255, 255, 255, 0.25),
+        rgba(255, 255, 255, 0.05) 46%,
+        rgba(255, 255, 255, 0.02)
+        ),
+        linear-gradient(
+        135deg,
+        rgba(109, 162, 255, 0.92),
+        rgba(143, 114, 255, 0.8)
+        );
+
+    box-shadow:
+        0 22px 40px rgba(92, 112, 255, 0.3),
+        inset 0 1px 0 rgba(255, 255, 255, 0.34),
+        inset 0 -1px 0 rgba(255, 255, 255, 0.07);
 }
 
 /* ========================================
@@ -712,4 +769,18 @@
     .project-case:hover .project-case__media img {
         transform: none;
     }
+}
+
+/* Liquid Glass refraction for project badges and actions. */
+@supports (backdrop-filter: url("#liquid-glass-pill")) {
+  @supports not (-webkit-touch-callout: none) {
+    .project-case__type,
+    .project-case__link {
+      backdrop-filter:
+        url("#liquid-glass-pill")
+        blur(0.75px)
+        saturate(145%)
+        brightness(1.07);
+    }
+  }
 }

@@ -262,7 +262,7 @@
 
   padding: 0.8rem 1.3rem;
 
-  border: 1px solid transparent;
+  border: 1px solid var(--glass-border);
   border-radius: var(--radius-pill);
 
   color: var(--text-main);
@@ -270,6 +270,9 @@
   font-size: 0.9rem;
   font-weight: 700;
   text-decoration: none;
+
+  -webkit-backdrop-filter: blur(9px) saturate(125%);
+  backdrop-filter: blur(9px) saturate(125%);
 
   transition:
     transform 0.22s ease,
@@ -283,17 +286,25 @@
 }
 
 .hero__cta--primary {
-  background: var(--gradient-primary);
-
-  box-shadow: var(--shadow-accent);
+  border-color: rgba(255, 255, 255, 0.2);
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.18), rgba(255, 255, 255, 0.025) 48%, rgba(255, 255, 255, 0.012)),
+    linear-gradient(135deg, rgba(109, 162, 255, 0.6), rgba(143, 114, 255, 0.5)),
+    rgba(8, 14, 29, 0.18);
+  box-shadow:
+    0 16px 30px rgba(92, 112, 255, 0.16),
+    inset 0 1px 0 rgba(255, 255, 255, 0.24),
+    inset 0 -1px 0 rgba(255, 255, 255, 0.04);
 }
 
 .hero__cta--secondary {
-  border-color: var(--surface-border);
-
-  background: rgba(255, 255, 255, 0.035);
-
-  backdrop-filter: blur(12px);
+  border-color: rgba(218, 226, 255, 0.16);
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.06), rgba(255, 255, 255, 0.014) 60%, rgba(109, 162, 255, 0.014)),
+    rgba(8, 14, 29, 0.28);
+  box-shadow:
+    0 12px 30px rgba(0, 0, 0, 0.12),
+    inset 0 1px 0 rgba(255, 255, 255, 0.08);
 }
 
 .hero__cta:hover,
@@ -303,14 +314,29 @@
 
 .hero__cta--primary:hover,
 .hero__cta--primary:focus-visible {
-  box-shadow: var(--shadow-accent-hover);
+  border-color: rgba(255, 255, 255, 0.32);
+
+  box-shadow:
+    0 22px 40px rgba(92, 112, 255, 0.3),
+    inset 0 1px 0 rgba(255, 255, 255, 0.34),
+    inset 0 -1px 0 rgba(255, 255, 255, 0.07);
 }
 
 .hero__cta--secondary:hover,
 .hero__cta--secondary:focus-visible {
-  border-color: rgba(109, 162, 255, 0.35);
+  border-color: rgba(218, 226, 255, 0.3);
 
-  background: rgba(109, 162, 255, 0.08);
+  background:
+    linear-gradient(
+      180deg,
+      rgba(255, 255, 255, 0.12),
+      rgba(109, 162, 255, 0.055)
+    ),
+    rgba(10, 18, 36, 0.52);
+
+  box-shadow:
+    0 18px 36px rgba(0, 0, 0, 0.2),
+    inset 0 1px 0 rgba(255, 255, 255, 0.16);
 }
 
 .hero__cta--primary:hover span,
@@ -435,26 +461,20 @@
 
 .hero__dashboard-window {
   position: relative;
-
   overflow: hidden;
-
-  border: 1px solid rgba(173, 189, 255, 0.18);
+  border: 1px solid rgba(218, 226, 255, 0.16);
   border-radius: 1.65rem;
-
   background:
-    linear-gradient(
-      145deg,
-      rgba(17, 27, 51, 0.94),
-      rgba(8, 14, 29, 0.94)
-    );
-
-  backdrop-filter: blur(18px);
-
+    radial-gradient(circle at 16% 0%, rgba(255, 255, 255, 0.055), transparent 34%),
+    linear-gradient(145deg, rgba(255, 255, 255, 0.028), rgba(255, 255, 255, 0.008) 48%, rgba(109, 162, 255, 0.02)),
+    rgba(8, 14, 29, 0.48);
+  -webkit-backdrop-filter: blur(12px) saturate(125%);
+  backdrop-filter: blur(12px) saturate(125%);
   box-shadow:
-    0 35px 90px rgba(0, 0, 0, 0.34),
-    0 0 0 1px rgba(255, 255, 255, 0.025),
-    inset 0 1px 0 rgba(255, 255, 255, 0.035);
-
+    0 30px 80px rgba(0, 0, 0, 0.28),
+    0 10px 30px rgba(62, 82, 160, 0.05),
+    inset 0 1px 0 rgba(255, 255, 255, 0.09),
+    inset 0 -1px 0 rgba(255, 255, 255, 0.018);
   transition:
     transform 0.4s var(--reveal-easing),
     border-color 0.3s ease,
@@ -464,12 +484,13 @@
 .hero__dashboard-window:hover {
   transform: translateY(-5px);
 
-  border-color: rgba(109, 162, 255, 0.3);
+  border-color: rgba(218, 226, 255, 0.27);
 
   box-shadow:
     0 40px 100px rgba(0, 0, 0, 0.4),
     0 0 42px rgba(109, 162, 255, 0.08),
-    inset 0 1px 0 rgba(255, 255, 255, 0.05);
+    inset 0 1px 0 rgba(255, 255, 255, 0.16),
+    inset 0 -1px 0 rgba(255, 255, 255, 0.03);
 }
 
 /* ========================================
@@ -1220,5 +1241,27 @@
 
   .hero__dashboard-window:hover {
     transform: none;
+  }
+}
+
+
+/* Liquid Glass refraction. The existing CSS glass remains the cross-browser fallback. */
+@supports (backdrop-filter: url("#liquid-glass-pill")) {
+  @supports not (-webkit-touch-callout: none) {
+    .hero__cta {
+      backdrop-filter:
+        url("#liquid-glass-pill")
+        blur(0.75px)
+        saturate(145%)
+        brightness(1.07);
+    }
+
+    .hero__dashboard-window {
+      backdrop-filter:
+        url("#liquid-glass-panel")
+        blur(1.25px)
+        saturate(140%)
+        brightness(1.05);
+    }
   }
 }
