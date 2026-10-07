@@ -37,6 +37,24 @@
         yChannelSelector="G"
       />
     </filter>
+    <filter id="liquid-glass-nav-menu" x="-20%" y="-20%" width="140%" height="140%" color-interpolation-filters="sRGB">
+      <feTurbulence
+        type="fractalNoise"
+        baseFrequency="0.01 0.028"
+        numOctaves="2"
+        seed="23"
+        stitchTiles="stitch"
+        result="nav-noise"
+      />
+      <feGaussianBlur in="nav-noise" stdDeviation="0.42" result="nav-soft-noise" />
+      <feDisplacementMap
+        in="SourceGraphic"
+        in2="nav-soft-noise"
+        scale="32"
+        xChannelSelector="R"
+        yChannelSelector="G"
+      />
+    </filter>
   </defs>
 </svg>
 
