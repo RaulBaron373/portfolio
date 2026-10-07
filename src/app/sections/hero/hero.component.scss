@@ -1251,17 +1251,17 @@
     .hero__cta {
       backdrop-filter:
         url("#liquid-glass-pill")
-        blur(4px)
-        saturate(138%)
-        brightness(1.04);
+        blur(0.75px)
+        saturate(145%)
+        brightness(1.07);
     }
 
     .hero__dashboard-window {
       backdrop-filter:
         url("#liquid-glass-panel")
-        blur(6px)
-        saturate(132%)
-        brightness(1.025);
+        blur(1.25px)
+        saturate(140%)
+        brightness(1.05);
     }
   }
 }
