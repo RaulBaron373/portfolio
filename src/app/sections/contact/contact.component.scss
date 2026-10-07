@@ -204,18 +204,37 @@
 .contact__info {
     position: relative;
     display: grid;
+
     padding: clamp(1.6rem, 3vw, 2rem);
-    border: 1px solid rgba(218, 226, 255, 0.16);
+
+    border: 1px solid rgba(218, 226, 255, 0.19);
     border-radius: 1.4rem;
+
     background:
-        radial-gradient(circle at 14% 0%, rgba(255, 255, 255, 0.05), transparent 34%),
-        radial-gradient(circle at top right, rgba(109, 162, 255, 0.055), transparent 40%),
-        rgba(10, 18, 36, 0.34);
-    -webkit-backdrop-filter: blur(10px) saturate(120%);
-    backdrop-filter: blur(10px) saturate(120%);
+        linear-gradient(
+            180deg,
+            rgba(255, 255, 255, 0.055),
+            rgba(255, 255, 255, 0.008) 48%,
+            rgba(109, 162, 255, 0.016)
+        ),
+        radial-gradient(
+            circle at 14% 0%,
+            rgba(255, 255, 255, 0.07),
+            transparent 35%
+        ),
+        radial-gradient(
+            circle at top right,
+            rgba(109, 162, 255, 0.065),
+            transparent 42%
+        ),
+        rgba(10, 18, 36, 0.27);
+
+    -webkit-backdrop-filter: blur(10px) saturate(125%);
+    backdrop-filter: blur(10px) saturate(125%);
+
     box-shadow:
-        0 20px 48px rgba(0, 0, 0, 0.13),
-        inset 0 1px 0 rgba(255, 255, 255, 0.08),
+        0 22px 52px rgba(0, 0, 0, 0.14),
+        inset 0 1px 0 rgba(255, 255, 255, 0.13),
         inset 0 -1px 0 rgba(255, 255, 255, 0.018);
 }
 
@@ -301,14 +320,27 @@
     display: inline-flex;
     align-items: center;
 
-    gap: 0.4rem;
-
     padding: 0.5rem 0.75rem;
 
-    border: 1px solid rgba(173, 189, 255, 0.13);
+    border: 1px solid rgba(218, 226, 255, 0.19);
     border-radius: var(--radius-pill);
 
-    background: rgba(255, 255, 255, 0.02);
+    background:
+        linear-gradient(
+            180deg,
+            rgba(255, 255, 255, 0.09),
+            rgba(255, 255, 255, 0.016) 58%,
+            rgba(109, 162, 255, 0.018)
+        ),
+        rgba(8, 14, 29, 0.24);
+
+    -webkit-backdrop-filter: blur(7px) saturate(120%);
+    backdrop-filter: blur(7px) saturate(120%);
+
+    box-shadow:
+        inset 0 1px 0 rgba(255, 255, 255, 0.13),
+        inset 0 -1px 0 rgba(255, 255, 255, 0.015),
+        0 7px 18px rgba(0, 0, 0, 0.07);
 
     color: var(--text-secondary);
 
@@ -320,7 +352,8 @@
         transform 0.2s ease,
         border-color 0.2s ease,
         background-color 0.2s ease,
-        color 0.2s ease;
+        color 0.2s ease,
+        box-shadow 0.2s ease;
 }
 
 .contact__socials a span {
@@ -331,12 +364,22 @@
 .contact__socials a:focus-visible {
     transform: translateY(-2px);
 
-    border-color: rgba(109, 162, 255, 0.32);
+    border-color: rgba(226, 233, 255, 0.29);
 
-    background: rgba(109, 162, 255, 0.07);
+    background:
+        linear-gradient(
+            180deg,
+            rgba(255, 255, 255, 0.12),
+            rgba(109, 162, 255, 0.04)
+        ),
+        rgba(9, 17, 34, 0.3);
 
     color: var(--text-main);
-    }
+
+    box-shadow:
+        inset 0 1px 0 rgba(255, 255, 255, 0.17),
+        0 10px 22px rgba(0, 0, 0, 0.1);
+}
 
     .contact__socials a:hover span,
     .contact__socials a:focus-visible span {
