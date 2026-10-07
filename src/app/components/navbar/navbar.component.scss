@@ -171,40 +171,32 @@
   .navbar__container {
     position: relative;
     padding: 0.75rem;
+
+    border-color: rgba(173, 189, 255, 0.16);
+
+    background: rgba(5, 10, 22, 0.78);
+
+    -webkit-backdrop-filter: blur(18px) saturate(115%);
+    backdrop-filter: blur(18px) saturate(115%);
+
+    box-shadow:
+      0 18px 40px rgba(0, 0, 0, 0.24),
+      inset 0 1px 0 rgba(255, 255, 255, 0.045);
   }
 
   .navbar__toggle {
     display: flex;
 
-    border-color: rgba(220, 228, 255, 0.22);
+    border-color: rgba(173, 189, 255, 0.16);
 
-    background:
-      linear-gradient(
-        180deg,
-        rgba(255, 255, 255, 0.12),
-        rgba(255, 255, 255, 0.025) 42%,
-        rgba(255, 255, 255, 0.008) 70%
-      ),
-      linear-gradient(
-        135deg,
-        rgba(63, 91, 158, 0.16),
-        rgba(89, 62, 148, 0.13)
-      ),
-      rgba(5, 11, 24, 0.48);
+    background: rgba(9, 16, 33, 0.72);
 
-    -webkit-backdrop-filter:
-      blur(5px)
-      saturate(132%)
-      brightness(0.96);
-    backdrop-filter:
-      blur(5px)
-      saturate(132%)
-      brightness(0.96);
+    -webkit-backdrop-filter: blur(12px);
+    backdrop-filter: blur(12px);
 
     box-shadow:
-      0 10px 24px rgba(0, 0, 0, 0.16),
-      inset 0 1px 0 rgba(255, 255, 255, 0.2),
-      inset 0 -1px 0 rgba(255, 255, 255, 0.025);
+      0 8px 18px rgba(0, 0, 0, 0.16),
+      inset 0 1px 0 rgba(255, 255, 255, 0.05);
   }
 
   .navbar__links {
@@ -218,113 +210,41 @@
     display: none;
     flex-direction: column;
     align-items: stretch;
-    gap: var(--space-2xs);
+    gap: 0.35rem;
 
-    isolation: isolate;
     overflow: hidden;
 
-    border: 1px solid rgba(220, 228, 255, 0.24);
+    border: 1px solid rgba(173, 189, 255, 0.16);
     border-radius: var(--radius-lg);
 
-    background: transparent;
+    background: rgba(4, 9, 20, 0.88);
+
+    -webkit-backdrop-filter: blur(24px) saturate(110%);
+    backdrop-filter: blur(24px) saturate(110%);
 
     box-shadow:
-      0 28px 64px rgba(0, 0, 0, 0.32),
-      0 12px 28px rgba(35, 51, 98, 0.14),
-      inset 0 1px 0 rgba(255, 255, 255, 0.14);
+      0 28px 64px rgba(0, 0, 0, 0.38),
+      inset 0 1px 0 rgba(255, 255, 255, 0.045);
   }
 
-  /* Optical layer: this is the real backdrop refraction surface. */
-  .navbar__links::before {
-    content: '';
-
-    position: absolute;
-    inset: 0;
-    z-index: 0;
-
-    border-radius: inherit;
-
-    background: rgba(255, 255, 255, 0.018);
-
-    -webkit-backdrop-filter:
-      blur(0.8px)
-      saturate(150%)
-      brightness(0.94)
-      contrast(1.08);
-    backdrop-filter:
-      blur(0.8px)
-      saturate(150%)
-      brightness(0.94)
-      contrast(1.08);
-
-    pointer-events: none;
-  }
-
-  /* Material layer: smoked/tinted glass laid over the refracted backdrop. */
+  .navbar__links::before,
   .navbar__links::after {
-    content: '';
-
-    position: absolute;
-    inset: 0;
-    z-index: 0;
-
-    border-radius: inherit;
-
-    background:
-      linear-gradient(
-        180deg,
-        rgba(118, 148, 220, 0.12) 0%,
-        rgba(34, 50, 86, 0.18) 25%,
-        rgba(8, 16, 34, 0.5) 68%,
-        rgba(4, 9, 21, 0.62) 100%
-      ),
-      linear-gradient(
-        135deg,
-        rgba(109, 162, 255, 0.1),
-        rgba(143, 114, 255, 0.08)
-      );
-
-    border: 1px solid rgba(255, 255, 255, 0.1);
-
-    box-shadow:
-      inset 0 1px 0 rgba(255, 255, 255, 0.22),
-      inset 1px 0 0 rgba(255, 255, 255, 0.055),
-      inset 0 -1px 0 rgba(0, 0, 0, 0.2);
-
-    pointer-events: none;
-  }
-
-  .navbar__links > li {
-    position: relative;
-    z-index: 1;
+    display: none;
   }
 
   .navbar__links--open {
     display: flex;
-    gap: 0.35rem;
   }
 
   .navbar__link {
-    position: relative;
-    z-index: 1;
-
     width: 100%;
     justify-content: center;
 
     border-color: transparent;
+    background: transparent;
 
-    /* Keep the surface visually invisible while still giving
-       backdrop-filter a transparent layer to refract through. */
-    background: rgba(255, 255, 255, 0.001);
-
-    -webkit-backdrop-filter:
-      blur(0.35px)
-      saturate(145%)
-      brightness(0.99);
-    backdrop-filter:
-      blur(0.35px)
-      saturate(145%)
-      brightness(0.99);
+    -webkit-backdrop-filter: none;
+    backdrop-filter: none;
 
     box-shadow: none;
   }
@@ -332,85 +252,46 @@
   .navbar__link:hover,
   .navbar__link:focus-visible {
     border-color: transparent;
-    background: rgba(255, 255, 255, 0.001);
+
+    background: rgba(255, 255, 255, 0.035);
+
     box-shadow: none;
   }
 
   .navbar__link--active {
-    border-color: rgba(225, 233, 255, 0.3);
+    border-color: rgba(173, 189, 255, 0.2);
 
-    background:
-      linear-gradient(
-        180deg,
-        rgba(255, 255, 255, 0.16),
-        rgba(255, 255, 255, 0.035) 54%,
-        rgba(109, 162, 255, 0.04)
-      ),
-      rgba(47, 68, 119, 0.24);
+    background: rgba(109, 162, 255, 0.12);
+
+    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px);
 
     box-shadow:
-      0 10px 24px rgba(0, 0, 0, 0.12),
-      inset 0 1px 0 rgba(255, 255, 255, 0.23),
-      inset 0 -1px 0 rgba(255, 255, 255, 0.025);
+      inset 0 1px 0 rgba(255, 255, 255, 0.07),
+      0 8px 20px rgba(0, 0, 0, 0.12);
   }
 }
 
 
-/* Progressive enhancement: optical refraction for Chromium-class browsers.
-   Safari keeps the CSS glass fallback because SVG backdrop filters are unreliable there. */
+/* Progressive enhancement: optical refraction for desktop Chromium-class browsers.
+   Responsive navigation intentionally uses only dark blur for clarity. */
 @supports (backdrop-filter: url("#liquid-glass-pill")) {
   @supports not (-webkit-touch-callout: none) {
-    .navbar__container {
-      backdrop-filter:
-        url("#liquid-glass-panel")
-        blur(1.25px)
-        saturate(140%)
-        brightness(1.05);
-    }
-
-    .navbar__link--active {
-      backdrop-filter:
-        url("#liquid-glass-pill")
-        blur(0.75px)
-        saturate(145%)
-        brightness(1.07);
-    }
-
-    @media (max-width: 900px) {
-      .navbar__toggle {
+    @media (min-width: 901px) {
+      .navbar__container {
         backdrop-filter:
-          url("#liquid-glass-pill")
-          blur(0.5px)
-          saturate(150%)
-          brightness(0.96)
-          contrast(1.06);
-      }
-
-      .navbar__links::before {
-        backdrop-filter:
-          url("#liquid-glass-nav-menu")
-          blur(0.35px)
-          saturate(165%)
-          brightness(0.92)
-          contrast(1.12);
-      }
-
-      .navbar__link {
-        backdrop-filter:
-          url("#liquid-glass-pill")
-          blur(0.35px)
-          saturate(150%)
-          brightness(0.98)
-          contrast(1.06);
+          url("#liquid-glass-panel")
+          blur(1.25px)
+          saturate(140%)
+          brightness(1.05);
       }
 
       .navbar__link--active {
         backdrop-filter:
           url("#liquid-glass-pill")
-          blur(0.25px)
-          saturate(158%)
-          brightness(1.04)
-          contrast(1.08);
+          blur(0.75px)
+          saturate(145%)
+          brightness(1.07);
       }
     }
   }
