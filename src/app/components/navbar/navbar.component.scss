@@ -217,17 +217,17 @@
     .navbar__container {
       backdrop-filter:
         url("#liquid-glass-panel")
-        blur(6px)
-        saturate(135%)
-        brightness(1.03);
+        blur(1.25px)
+        saturate(140%)
+        brightness(1.05);
     }
 
     .navbar__link--active {
       backdrop-filter:
         url("#liquid-glass-pill")
-        blur(4px)
-        saturate(138%)
-        brightness(1.04);
+        blur(0.75px)
+        saturate(145%)
+        brightness(1.07);
     }
   }
 }
