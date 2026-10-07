@@ -698,9 +698,9 @@
     .experience__content {
       backdrop-filter:
         url("#liquid-glass-panel")
-        blur(5px)
-        saturate(130%)
-        brightness(1.025);
+        blur(1.25px)
+        saturate(140%)
+        brightness(1.05);
     }
 
     .experience__index span,
@@ -708,9 +708,9 @@
     .experience__technologies li {
       backdrop-filter:
         url("#liquid-glass-pill")
-        blur(3px)
-        saturate(136%)
-        brightness(1.04);
+        blur(0.75px)
+        saturate(145%)
+        brightness(1.07);
     }
   }
 }
