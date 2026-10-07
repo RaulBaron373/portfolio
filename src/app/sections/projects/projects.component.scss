@@ -770,3 +770,17 @@
         transform: none;
     }
 }
+
+/* Liquid Glass refraction for project badges and actions. */
+@supports (backdrop-filter: url("#liquid-glass-pill")) {
+  @supports not (-webkit-touch-callout: none) {
+    .project-case__type,
+    .project-case__link {
+      backdrop-filter:
+        url("#liquid-glass-pill")
+        blur(3px)
+        saturate(136%)
+        brightness(1.04);
+    }
+  }
+}
