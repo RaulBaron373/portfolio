@@ -568,3 +568,26 @@
         transform: none;
     }
 }
+
+/* Liquid Glass refraction for the contact panel, actions and social pills. */
+@supports (backdrop-filter: url("#liquid-glass-pill")) {
+  @supports not (-webkit-touch-callout: none) {
+    .contact__info {
+      backdrop-filter:
+        url("#liquid-glass-panel")
+        blur(5px)
+        saturate(130%)
+        brightness(1.025);
+    }
+
+    .contact__primary,
+    .contact__secondary,
+    .contact__socials a {
+      backdrop-filter:
+        url("#liquid-glass-pill")
+        blur(3px)
+        saturate(136%)
+        brightness(1.04);
+    }
+  }
+}
