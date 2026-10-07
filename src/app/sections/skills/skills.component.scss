@@ -420,3 +420,16 @@
         transform: none;
     }
 }
+
+/* Liquid Glass refraction for technology pills. */
+@supports (backdrop-filter: url("#liquid-glass-pill")) {
+  @supports not (-webkit-touch-callout: none) {
+    .skills__list li {
+      backdrop-filter:
+        url("#liquid-glass-pill")
+        blur(3px)
+        saturate(136%)
+        brightness(1.04);
+    }
+  }
+}
