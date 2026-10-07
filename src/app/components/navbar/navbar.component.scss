@@ -176,23 +176,35 @@
   .navbar__toggle {
     display: flex;
 
-    border-color: rgba(218, 226, 255, 0.2);
+    border-color: rgba(220, 228, 255, 0.22);
 
     background:
       linear-gradient(
         180deg,
-        rgba(255, 255, 255, 0.09),
-        rgba(255, 255, 255, 0.018) 58%,
-        rgba(109, 162, 255, 0.018)
+        rgba(255, 255, 255, 0.12),
+        rgba(255, 255, 255, 0.025) 42%,
+        rgba(255, 255, 255, 0.008) 70%
       ),
-      rgba(8, 14, 29, 0.28);
+      linear-gradient(
+        135deg,
+        rgba(63, 91, 158, 0.16),
+        rgba(89, 62, 148, 0.13)
+      ),
+      rgba(5, 11, 24, 0.48);
 
-    -webkit-backdrop-filter: blur(7px) saturate(125%);
-    backdrop-filter: blur(7px) saturate(125%);
+    -webkit-backdrop-filter:
+      blur(5px)
+      saturate(132%)
+      brightness(0.96);
+    backdrop-filter:
+      blur(5px)
+      saturate(132%)
+      brightness(0.96);
 
     box-shadow:
-      inset 0 1px 0 rgba(255, 255, 255, 0.13),
-      0 8px 20px rgba(0, 0, 0, 0.08);
+      0 10px 24px rgba(0, 0, 0, 0.16),
+      inset 0 1px 0 rgba(255, 255, 255, 0.2),
+      inset 0 -1px 0 rgba(255, 255, 255, 0.025);
   }
 
   .navbar__links {
@@ -208,30 +220,47 @@
     align-items: stretch;
     gap: var(--space-2xs);
 
-    border: 1px solid rgba(218, 226, 255, 0.2);
+    border: 1px solid rgba(220, 228, 255, 0.22);
     border-radius: var(--radius-lg);
 
     background:
       linear-gradient(
         180deg,
-        rgba(255, 255, 255, 0.06),
-        rgba(255, 255, 255, 0.01) 48%,
-        rgba(109, 162, 255, 0.016)
+        rgba(255, 255, 255, 0.1),
+        rgba(255, 255, 255, 0.02) 32%,
+        rgba(255, 255, 255, 0.006) 72%
       ),
       radial-gradient(
-        circle at 16% 0%,
-        rgba(255, 255, 255, 0.07),
+        circle at 14% 0%,
+        rgba(121, 157, 255, 0.13),
         transparent 34%
       ),
-      rgba(8, 14, 29, 0.3);
+      radial-gradient(
+        circle at 88% 100%,
+        rgba(143, 114, 255, 0.11),
+        transparent 42%
+      ),
+      linear-gradient(
+        135deg,
+        rgba(44, 64, 112, 0.16),
+        rgba(70, 48, 111, 0.13)
+      ),
+      rgba(5, 11, 24, 0.5);
 
-    -webkit-backdrop-filter: blur(10px) saturate(128%);
-    backdrop-filter: blur(10px) saturate(128%);
+    -webkit-backdrop-filter:
+      blur(6px)
+      saturate(135%)
+      brightness(0.94);
+    backdrop-filter:
+      blur(6px)
+      saturate(135%)
+      brightness(0.94);
 
     box-shadow:
-      0 24px 54px rgba(0, 0, 0, 0.22),
-      inset 0 1px 0 rgba(255, 255, 255, 0.13),
-      inset 0 -1px 0 rgba(255, 255, 255, 0.018);
+      0 28px 64px rgba(0, 0, 0, 0.3),
+      0 12px 28px rgba(35, 51, 98, 0.12),
+      inset 0 1px 0 rgba(255, 255, 255, 0.2),
+      inset 0 -1px 0 rgba(255, 255, 255, 0.025);
   }
 
   .navbar__links--open {
@@ -258,8 +287,7 @@
         brightness(1.05);
     }
 
-    .navbar__link--active,
-    .navbar__toggle {
+    .navbar__link--active {
       backdrop-filter:
         url("#liquid-glass-pill")
         blur(0.75px)
@@ -268,12 +296,22 @@
     }
 
     @media (max-width: 900px) {
+      .navbar__toggle {
+        backdrop-filter:
+          url("#liquid-glass-pill")
+          blur(0.5px)
+          saturate(150%)
+          brightness(0.96)
+          contrast(1.06);
+      }
+
       .navbar__links {
         backdrop-filter:
           url("#liquid-glass-panel")
-          blur(1.25px)
-          saturate(140%)
-          brightness(1.05);
+          blur(0.75px)
+          saturate(150%)
+          brightness(0.93)
+          contrast(1.07);
       }
     }
   }
