@@ -1243,3 +1243,25 @@
     transform: none;
   }
 }
+
+
+/* Liquid Glass refraction. The existing CSS glass remains the cross-browser fallback. */
+@supports (backdrop-filter: url("#liquid-glass-pill")) {
+  @supports not (-webkit-touch-callout: none) {
+    .hero__cta {
+      backdrop-filter:
+        url("#liquid-glass-pill")
+        blur(4px)
+        saturate(138%)
+        brightness(1.04);
+    }
+
+    .hero__dashboard-window {
+      backdrop-filter:
+        url("#liquid-glass-panel")
+        blur(6px)
+        saturate(132%)
+        brightness(1.025);
+    }
+  }
+}
